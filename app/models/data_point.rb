@@ -1,4 +1,4 @@
-class DataPoint < ApplicationRecord::Base
+class DataPoint < ApplicationRecord
 	belongs_to :user
 	belongs_to :challenge
 end
