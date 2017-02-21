@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 
 # UTILS
 gem 'typogruby'
+gem 'inline_svg', '~> 0.11'
 gem 'annotate'
 gem 'sitemap_generator'
 # AUTHENTICATION
