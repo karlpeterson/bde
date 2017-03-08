@@ -35,6 +35,7 @@ gem 'sitemap_generator'
 # AUTHENTICATION
 gem 'devise'
 gem 'cancancan'
+# gem 'forest_liana'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

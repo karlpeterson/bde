@@ -31,5 +31,4 @@ class User < ApplicationRecord
          :confirmable
   has_many :datapoints
   has_many :challenges, through: :datapoints
-  has_one :userinfo
 end
