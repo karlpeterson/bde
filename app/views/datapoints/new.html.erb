@@ -1,5 +1,11 @@
-<h1>New Datapoint</h1>
+<% title 'Add Points' %>
 
-<%= render 'form', datapoint: @datapoint %>
+<div id="content">
+	<div class="wrap">
 
-<%= link_to 'Back', datapoints_path %>
+		<%= render 'form', datapoint: @datapoint %>
+
+		<%= link_to 'Back', datapoints_path %>
+
+	</div>
+</div>

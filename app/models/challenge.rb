@@ -13,4 +13,5 @@
 class Challenge < ApplicationRecord
 	has_many :datapoints
 	has_many :users, through: :datapoints
+	# accepts_nested_attributes_for :datapoints
 end

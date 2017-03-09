@@ -12,6 +12,54 @@
   <% end %>
 
   <div class="actions">
+    <div class="field">
+    <%= f.collection_select :user_id, User.all, :id, :email %>
+    </div>
+    <div class="field">
+    <%= f.collection_select :challenge_id, Challenge.all, :id, :name %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_0) %>
+    <%= f.label(:data_0, 'No Sugar') %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_1) %>
+    <%= f.label(:data_1, 'No Alcohol') %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_2) %>
+    <%= f.label(:data_2, 'Ancient Grains Only') %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_3) %>
+    <%= f.label(:data_3, '20 Minutes Movement') %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_4) %>
+    <%= f.label(:data_4, 'Healthy Fats') %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_5) %>
+    <%= f.label(:data_5, 'Daily Interaction') %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_6) %>
+    <%= f.label(:data_6, 'Light Dairy') %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_7) %>
+    <%= f.label(:data_7, 'Sleep') %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_8) %>
+    <%= f.label(:data_8, 'Vitamin D') %>
+    </div>
+    <div class="field">
+    <%= f.check_box(:data_9) %>
+    <%= f.label(:data_9, 'Hydration') %>
+    </div>
+    <div class="field">
     <%= f.submit %>
+    </div>
   </div>
 <% end %>
