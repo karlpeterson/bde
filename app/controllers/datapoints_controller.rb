@@ -17,6 +17,7 @@ class DatapointsController < ApplicationController
 
 	def create
 		@datapoint = Datapoint.new(datapoint_params)
+		@datapoint.user_id = current_user.id
 
 		if @datapoint.save
 			redirect_to @datapoint
@@ -33,6 +34,13 @@ class DatapointsController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		@datapoint = Datapoint.find(params[:id])
+		@datapoint.destroy
+
+		redirect_to datapoints_path
 	end
 
 	private

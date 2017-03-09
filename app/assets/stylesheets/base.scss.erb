@@ -46,7 +46,13 @@ body {
 }
 
 a {
-  
+  color: #333;
+  &:visited, &:active {
+    color: #333;
+  }
+  &:hover {
+    color: #000;
+  }
 }
 
 ul, ol {
@@ -143,21 +149,47 @@ a.btn {
 
 /* Layouts */
 
-
+#content {
+  margin-top: 1em;
+}
 
 /* End Layouts */
 
 /* Header */
 
+#header {
+  margin-top: 1em;
+  position: relative;
+}
+
 #logo {
-  float: left;
-  min-width: 30%;
+  display: block;
+  max-width: 30%;
   .bde-logo-m {display: block;}
   .bde-logo {display: none;}
 }
 
 #nav-container {
-  float: right;
+  ul {
+    margin-top: 0.5em;
+    li {
+      text-align: center;
+      padding: 0.5em 0;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#navToggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 24px;
+  padding: 0.25em 0.5em;
+  background-color: #eee;
+  cursor: pointer;
 }
 
 /* End Header */
@@ -167,3 +199,11 @@ a.btn {
 
 
 /* End Footer */
+
+/* Forms */
+
+.field {
+  margin-bottom: 1em;
+}
+
+/* End Forms */

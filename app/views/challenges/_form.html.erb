@@ -25,7 +25,7 @@
       <%= f.number_field :duration %>
     </div>
     <div class="field">
-      <%= f.association :users, label_method: :email %>
+      <%= f.association :users, collection: User.all, label_method: :email %>
     </div>
     <div class="field">
     <%= f.submit %>
