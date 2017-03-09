@@ -36,7 +36,7 @@ threads threads_count, threads_count
 preload_app!
 
 rackup		DefaultRackup
-port 		ENV['PORT'] || 3000
+port		ENV['PORT'] || 3000
 environment	ENV['RACK_ENV'] || 'development'
 
 # The code in the `on_worker_boot` will be called if you are using
