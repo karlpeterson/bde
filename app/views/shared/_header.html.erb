@@ -7,11 +7,11 @@
 		<div id="navToggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
 		<nav id="main-nav" class="nav-collapse">
 			<ul>
-				<li class="<%= is_active?('/points') %>"><a href="">My Points</a></li>
-				<li class="<%= is_active?('/rankings') %>"><a href="">Rankings</a></li>
-				<li class="<%= is_active?('/info') %>"><a href="">Info</a></li>
-				<li class="<%= is_active?('/account') %>"><a href="">Account</a></li>
-				<li><a href="">Log Points</a></li>
+				<li class="<%= is_active?('/points') %>"><a href="/dashboard">My Points</a></li>
+				<li class="<%= is_active?('/rankings') %>"><a href="/rankings">Rankings</a></li>
+				<li class="<%= is_active?('/info') %>"><a href="/info">Info</a></li>
+				<li class="<%= is_active?('/account') %>"><a href="/account">Account</a></li>
+				<li><a href="/log">Log Points</a></li>
 			</ul>
 		</nav>
 	</div>

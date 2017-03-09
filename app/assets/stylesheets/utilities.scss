@@ -112,3 +112,22 @@ video#bgvid {
 .cover-content {
   height: 100%;
 }
+
+/* Debug */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  background: #eee;
+  padding: 1em;
+  font-size: 14px;
+  @include box_sizing;
+}
