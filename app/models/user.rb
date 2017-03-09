@@ -30,6 +30,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
   has_many :datapoints
-  has_many :challenges, through: :datapoints
+  has_and_belongs_to_many :challenges
   # accepts_nested_attributes_for :datapoints
 end

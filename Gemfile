@@ -32,6 +32,7 @@ gem 'typogruby'
 gem 'inline_svg', '~> 0.11'
 gem 'annotate'
 gem 'sitemap_generator'
+gem 'simple_form'
 # AUTHENTICATION
 gem 'devise'
 gem 'cancancan'

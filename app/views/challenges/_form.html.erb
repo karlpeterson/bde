@@ -1,4 +1,4 @@
-<%= form_for(challenge) do |f| %>
+<%= simple_form_for @challenge do |f| %>
   <% if challenge.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(challenge.errors.count, "error") %> prohibited this challenge from being saved:</h2>
@@ -23,6 +23,9 @@
     <div class="field">
       <%= f.label :duration %>
       <%= f.number_field :duration %>
+    </div>
+    <div class="field">
+      <%= f.association :users, label_method: :email %>
     </div>
     <div class="field">
     <%= f.submit %>
