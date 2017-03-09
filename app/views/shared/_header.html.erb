@@ -1,4 +1,5 @@
-<header id="header" class="cf">
+<header id="header">
+	<div class="wrap cf">
 	<a id="logo" href="/">
 		<%= inline_svg 'bde-logo-m.svg', class: 'bde-logo-m' %>
 		<%= inline_svg 'bde-logo.svg', class: 'bde-logo' %>
@@ -11,8 +12,10 @@
 				<li class="<%= is_active?('/rankings') %>"><a href="/rankings">Rankings</a></li>
 				<li class="<%= is_active?('/info') %>"><a href="/info">Info</a></li>
 				<li class="<%= is_active?('/account') %>"><a href="/account">Account</a></li>
-				<li><a href="/log">Log Points</a></li>
+				<li><a href="/datapoints/new">Log Points</a></li>
+				<li><a href="/challenges/">Challenges</a>
 			</ul>
 		</nav>
+	</div>
 	</div>
 </header>

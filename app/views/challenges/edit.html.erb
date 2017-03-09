@@ -1,0 +1,14 @@
+<% title 'Edit this Challenge' %>
+
+<div id="content">
+	<div class="wrap">
+
+		<h2>Edit the <%= @challenge.name %> Challenge</h2>
+
+		<%= render 'form', challenge: @challenge %>
+
+		<%= link_to 'Show', @challenge %> |
+		<%= link_to 'Back', challenges_path %>
+
+	</div>
+</div>

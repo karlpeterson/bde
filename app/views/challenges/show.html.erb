@@ -1,0 +1,15 @@
+<% title 'Challenges' %>
+
+<div id="content">
+<div class="wrap">
+
+	<h2><%= @challenge.name %></h2>
+
+	<%= @challenge.start_date %>
+	<%= @challenge.duration %>
+
+	<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+	<%= link_to 'Back', challenges_path %>
+
+</div>
+</div>
