@@ -36,6 +36,7 @@ gem 'simple_form'
 # AUTHENTICATION
 gem 'devise'
 gem 'cancancan'
+gem 'rolify'
 # gem 'forest_liana'
 
 # Use Capistrano for deployment

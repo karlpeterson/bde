@@ -30,12 +30,24 @@ class ChallengesController < ApplicationController
 
 	def new
 		@challenge = Challenge.new
+		
 	end
 
 	def create
 		@challenge = Challenge.new(challenge_params)
+		@user_list = @challenge.users
 
 		if @challenge.save
+
+			@user_list.each do |user|
+				cohort = Cohort.new(:user_id => user, :challenge_id => @challenge.id)
+				if cohort.valid?
+					cohort.save
+				else
+					@errors += cohort.errors
+				end
+			end
+
 			redirect_to @challenge
 		else
 			render 'new'

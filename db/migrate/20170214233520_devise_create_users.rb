@@ -41,5 +41,42 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
+
+    create_table :challenges do |t|
+      t.string    :name
+      t.date      :start_date
+      t.integer   :duration
+
+      t.timestamps
+    end
+
+    create_table :cohorts do |t|
+      t.belongs_to :user, index: true
+      t.belongs_to :challenge, index: true
+
+      t.timestamps
+    end
+
+    create_table :datapoints do |t|
+      t.belongs_to :user, index: true
+      t.belongs_to :challenge, index: true
+
+      t.date    :date
+      t.integer :day
+      t.boolean :data_0
+      t.boolean :data_1
+      t.boolean :data_2
+      t.boolean :data_3
+      t.boolean :data_4
+      t.boolean :data_5
+      t.boolean :data_6
+      t.boolean :data_7
+      t.boolean :data_8
+      t.boolean :data_9
+      t.integer :total_points
+
+      t.timestamps
+    end
+
   end
 end

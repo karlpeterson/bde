@@ -14,6 +14,15 @@
 				<li class="<%= is_active?('/users/edit') %>"><a href="/users/edit">Account</a></li>
 				<li class="<%= is_active?('/datapoints/new') %>"><a href="/datapoints/new">Log Points</a></li>
 				<li class="<%= is_active?('/challenges') %>"><a href="/challenges/">Challenges</a>
+				<% if user_signed_in? %>
+				  <li>
+				  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+				  </li>
+				<% else %>
+				  <li>
+				  <%= link_to('Login', new_user_session_path)  %>  
+				  </li>
+				<% end %>
 			</ul>
 		</nav>
 	</div>
