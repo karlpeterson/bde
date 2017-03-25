@@ -21,8 +21,8 @@
       <%= f.date_field :start_date %>
     </div>
     <div class="field">
-      <%= f.label :duration %>
-      <%= f.number_field :duration %>
+      <%= f.label :end_date %>
+      <%= f.date_field :end_date %>
     </div>
     <div class="field">
       <%= f.association :users, collection: User.all, label_method: :email, as: :check_boxes %>

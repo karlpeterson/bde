@@ -6,10 +6,16 @@
 	<h2><%= @challenge.name %></h2>
 
 	<%= @challenge.start_date %>
-	<%= @challenge.duration %>
+	<%= @challenge.end_date %>
 
 	<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
 	<%= link_to 'Back', challenges_path %>
+
+	<ul>
+	<% @datapoint_list.each do |d| %>
+		<li><%= d.date %> | <%= d.day %> | <%= d.user_id %> | <%= d.challenge_id %></li>
+	<% end %>
+	</ul>
 
 </div>
 </div>

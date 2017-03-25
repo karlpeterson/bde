@@ -22,6 +22,7 @@ class ChallengesController < ApplicationController
 
 	def show
 		@challenge = Challenge.find(params[:id])
+		@datapoint_list = @challenge.datapoints
 	end
 
 	def edit
@@ -39,12 +40,31 @@ class ChallengesController < ApplicationController
 
 		if @challenge.save
 
+			start_date	= @challenge.start_date
+			end_date 	= @challenge.end_date
+			# create array of dates between start_date and duration
+			date_range	= start_date..end_date
+			date_range	= date_range.map(&:to_s)
+
+			# loop through all associated users
 			@user_list.each do |user|
+				# create join
 				cohort = Cohort.new(:user_id => user, :challenge_id => @challenge.id)
 				if cohort.valid?
 					cohort.save
 				else
 					@errors += cohort.errors
+				end
+
+				# for each date in range create an empty Datapoint
+				date_range.each_with_index do |day, index|
+					day_count = index + 1
+					datapoint = Datapoint.new(:user_id => user.id, :challenge_id => @challenge.id, :date => day, :day => day_count)
+					if datapoint.valid?
+						datapoint.save
+					else
+						@errors += datapoint.errors
+					end
 				end
 			end
 
@@ -73,6 +93,6 @@ class ChallengesController < ApplicationController
 
 	private
 	def challenge_params
-		params.require(:challenge).permit(:name, :start_date, :duration, :user_ids => [])
+		params.require(:challenge).permit(:name, :start_date, :end_date, :user_ids => [])
 	end
 end
