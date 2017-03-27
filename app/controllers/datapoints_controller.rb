@@ -30,7 +30,11 @@ class DatapointsController < ApplicationController
 		@datapoint = Datapoint.find(params[:id])
 
 		if @datapoint.update(datapoint_params)
-			redirect_to @datapoint
+			total_points = [@datapoint.data_0,@datapoint.data_1,@datapoint.data_2,@datapoint.data_3,@datapoint.data_4,@datapoint.data_5,@datapoint.data_6,@datapoint.data_7,@datapoint.data_8,@datapoint.data_9]
+			total_points = total_points.count(true)
+			@datapoint.total_points = total_points
+			@datapoint.save
+			redirect_to '/dashboard'
 		else
 			render 'edit'
 		end

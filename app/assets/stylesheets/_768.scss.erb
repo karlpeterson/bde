@@ -64,3 +64,57 @@
 
 
 /* End Footer */
+
+/* Datapoint Lists */
+
+#datapoint_list {
+  margin-top: 120px;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  td {
+    width: 7.69230769%;
+  }
+  thead {
+    display: table-header-group;
+    transform: translate(7.69230769%, -1px);
+  }
+  thead tr {
+    transform: translate(-15px, 0);
+    th {
+      height: 20px;
+      white-space: nowrap;
+      > div {
+        transform: rotate(315deg);
+        width: 1px;
+        > span {
+          border-bottom: 1px solid #000;
+          padding: 0.5em;
+        }
+      }
+    }
+  }
+  tbody tr {
+    td {
+      display: table-cell;
+      border: 1px solid;
+      padding: 0.5em;
+      font-size: 24px;
+      &:first-child {
+        border-left: none;
+        font-size: 12px;
+      }
+      &:nth-child(2) {
+        font-size: 12px;
+      }
+      &:last-child {
+        border-right: none;
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+/* End Datapoint Lists */

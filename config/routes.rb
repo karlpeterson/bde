@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "application#index"
   get 'info',			to: 'application#info'
-  get 'dashboard',		to: 'application#dashboard'
-  get 'rankings',		to: 'application#rankings'
+  get 'dashboard',		to: 'challenges#dashboard'
+  get 'rankings',		to: 'challenges#rankings'
 end

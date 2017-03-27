@@ -1,19 +1,17 @@
 class ChallengesController < ApplicationController
 	
 	def dashboard
-		if current_user
-			@current_challenge = Challenge.last
-		else
-			redirect_to '/users/login'
-		end
+		@current_challenge = Challenge.last
+		@datapoint_list = Datapoint.where("challenge_id = ? AND user_id = ?", @current_challenge.id, current_user.id).order(:day)
 	end
 
 	def rankings
-		if current_user
-
-		else
-
-		end
+		@current_challenge = Challenge.last
+		user_list = @current_challenge.users
+		# user_list.each do |user|
+		# 	user_points = Datapoint.where(:user_id => user.id, :challenge_id = @current_challenge.id)
+		# 	challenge_total = user_points.sum(:total_points)
+		# end
 	end
 
 	def index
@@ -22,7 +20,8 @@ class ChallengesController < ApplicationController
 
 	def show
 		@challenge = Challenge.find(params[:id])
-		@datapoint_list = @challenge.datapoints
+		# @datapoint_list = @challenge.datapoints.order(:day)
+		@datapoint_list = Datapoint.where("challenge_id = ? AND user_id = ?", params[:id], current_user.id).order(:day)
 	end
 
 	def edit
