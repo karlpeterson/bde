@@ -8,11 +8,7 @@ class ChallengesController < ApplicationController
 
 	def rankings
 		@current_challenge = Challenge.last
-		user_list = @current_challenge.users
-		# user_list.each do |user|
-		# 	user_points = Datapoint.where(:user_id => user.id, :challenge_id = @current_challenge.id)
-		# 	challenge_total = user_points.sum(:total_points)
-		# end
+		@stat_list = Stat.where(:challenge_id => @current_challenge.id).order(:rank)
 	end
 
 	def index
@@ -56,7 +52,7 @@ class ChallengesController < ApplicationController
 					@errors += cohort.errors
 				end
 
-				stat = Stat.new(:user_id => user.id, :challenge_id => @challenge.id, :total_points => 0)
+				stat = Stat.new(:user_id => user.id, :challenge_id => @challenge.id, :total_points => 0, :rank => 0)
 				if stat.valid?
 					stat.save
 				else
