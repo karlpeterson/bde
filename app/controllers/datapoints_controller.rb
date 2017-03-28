@@ -34,6 +34,14 @@ class DatapointsController < ApplicationController
 			total_points = total_points.count(true)
 			@datapoint.total_points = total_points
 			@datapoint.save
+
+			datapoint_list = Datapoint.where(:challenge_id => @datapoint.challenge_id, :user_id => @datapoint.user_id)
+			grand_total = datapoint_list.sum(:total_points)
+
+			stat = Stat.find_by(:challenge_id => @datapoint.challenge_id, :user_id => @datapoint.user_id)
+			stat.total_points = grand_total
+			stat.save
+
 			redirect_to '/dashboard'
 		else
 			render 'edit'

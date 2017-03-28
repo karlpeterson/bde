@@ -32,6 +32,7 @@ class User < ApplicationRecord
          :confirmable
   has_many :datapoints
   has_many :cohorts
+  has_many :stats
   has_many :challenges, :through => :cohorts
   # accepts_nested_attributes_for :datapoints
 end

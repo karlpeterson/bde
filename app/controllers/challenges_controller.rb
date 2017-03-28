@@ -3,6 +3,7 @@ class ChallengesController < ApplicationController
 	def dashboard
 		@current_challenge = Challenge.last
 		@datapoint_list = Datapoint.where("challenge_id = ? AND user_id = ?", @current_challenge.id, current_user.id).order(:day)
+		@stat = Stat.find_by(:challenge_id => @current_challenge.id, :user_id => current_user.id)
 	end
 
 	def rankings
@@ -20,8 +21,8 @@ class ChallengesController < ApplicationController
 
 	def show
 		@challenge = Challenge.find(params[:id])
-		# @datapoint_list = @challenge.datapoints.order(:day)
 		@datapoint_list = Datapoint.where("challenge_id = ? AND user_id = ?", params[:id], current_user.id).order(:day)
+		# @stat = Stat.where("challenge_id = ? AND user_id = ?", @current_challenge.id, current_user.id)
 	end
 
 	def edit
@@ -53,6 +54,13 @@ class ChallengesController < ApplicationController
 					cohort.save
 				else
 					@errors += cohort.errors
+				end
+
+				stat = Stat.new(:user_id => user.id, :challenge_id => @challenge.id, :total_points => 0)
+				if stat.valid?
+					stat.save
+				else
+					@errors += stat.errors
 				end
 
 				# for each date in range create an empty Datapoint

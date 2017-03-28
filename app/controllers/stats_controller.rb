@@ -1,0 +1,5 @@
+class StatsController < ApplicationController
+
+	
+
+end

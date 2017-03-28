@@ -3,8 +3,8 @@
 <div id="content">
 <div class="wrap">
 
-	<h2><%= @challenge.name %> Challenge</h2>
-	<h4>From <%= @challenge.start_date %> to <%= @challenge.end_date %></h4>
+	<h2 class="banner"><%= @challenge.name %></h2>
+	<h4><%= @challenge.start_date.strftime("%b %d") %> - <%= @challenge.end_date.strftime("%b %d") %></h4>
 
 	<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
 	<%= link_to 'Back to Challenge Archive', challenges_path %>
@@ -32,16 +32,16 @@
 			<tr>
 				<td>Day <%= d.day %></td>
 				<td><%= d.total_points %></td>
-				<td><% if d.data_0 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
-				<td><% if d.data_1 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
-				<td><% if d.data_2 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
-				<td><% if d.data_3 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
-				<td><% if d.data_4 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
-				<td><% if d.data_5 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
-				<td><% if d.data_6 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
-				<td><% if d.data_7 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
-				<td><% if d.data_8 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
-				<td><% if d.data_9 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %><i class="fa fa-circle-thin" aria-hidden="true"></i><% end %></td>
+				<td><% if d.data_0 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
+				<td><% if d.data_1 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
+				<td><% if d.data_2 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
+				<td><% if d.data_3 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
+				<td><% if d.data_4 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
+				<td><% if d.data_5 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
+				<td><% if d.data_6 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
+				<td><% if d.data_7 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
+				<td><% if d.data_8 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
+				<td><% if d.data_9 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
 				<td><%= link_to 'Edit', edit_datapoint_path(d) %></td>
 			</tr>
 			<% end %>
