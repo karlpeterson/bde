@@ -39,6 +39,7 @@ class DatapointsController < ApplicationController
 			grand_total = datapoint_list.sum(:total_points)
 
 			stat_list = Stat.where(:challenge_id => @datapoint.challenge_id).order(:total_points).reverse_order
+			rank = 1
 			stat_list.each_with_index do |stat, i|
 				stat_list[i-1].total_points == stat.total_points ? rank : rank = i+1
 				stat.rank = rank
