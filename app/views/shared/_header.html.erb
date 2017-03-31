@@ -4,6 +4,7 @@
 		<%= inline_svg 'bde-logo-m.svg', class: 'bde-logo-m' %>
 		<%= inline_svg 'bde-logo.svg', class: 'bde-logo' %>
 	</a>
+	<% if user_signed_in? %>
 	<div id="nav-container">
 		<div id="navToggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
 		<nav id="main-nav" class="nav-collapse">
@@ -12,7 +13,6 @@
 				<li class="<%= is_active?('/rankings') %>"><a href="/rankings">Rankings</a></li>
 				<li class="<%= is_active?('/info') %>"><a href="/info">Info</a></li>
 				<li class="<%= is_active?('/users/edit') %>"><a href="/users/edit">Account</a></li>
-				<li class="<%= is_active?('/datapoints/new') %>"><a href="/datapoints/new">Log Points</a></li>
 				<li class="<%= is_active?('/challenges') %>"><a href="/challenges/">Challenges</a>
 				<% if user_signed_in? %>
 				  <li>
@@ -26,5 +26,6 @@
 			</ul>
 		</nav>
 	</div>
+	<% end %>
 	</div>
 </header>

@@ -79,6 +79,7 @@ class ChallengesController < ApplicationController
 
 	def update
 		@challenge = Challenge.find(params[:id])
+		@user_list = @challenge.users
 
 		if @challenge.update(challenge_params)
 			redirect_to @challenge

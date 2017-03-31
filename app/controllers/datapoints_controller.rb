@@ -1,4 +1,5 @@
 class DatapointsController < ApplicationController
+	
 	def index
 		@datapoints = Datapoint.all
 	end
