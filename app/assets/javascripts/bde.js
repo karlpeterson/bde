@@ -3,4 +3,5 @@ $(document).on('turbolinks:load', function() {
   var mainNav = responsiveNav("#main-nav", {
     customToggle: "navToggle"
   });
+  
 });
