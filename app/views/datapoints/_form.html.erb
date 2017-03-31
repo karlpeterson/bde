@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="actions">
-    <div class="field">
+    <div class="field hide">
     <%= f.collection_select :user_id, User.all, :id, :email %>
     </div>
-    <div class="field">
+    <div class="field hide">
     <%= f.collection_select :challenge_id, Challenge.all, :id, :name %>
     </div>
     <div class="field">
@@ -59,7 +59,7 @@
     <%= f.label(:data_9, 'Hydration') %>
     </div>
     <div class="field">
-    <%= f.submit %>
+    <%= f.submit "Add", :class => "btn" %>
     </div>
   </div>
 <% end %>
