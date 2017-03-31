@@ -3,6 +3,8 @@
 <div id="content">
 <div class="wrap">
 
+	<% if @current_challenge %>
+
 	<h4 class="banner"><%= @current_challenge.name %> – <%= @stat.total_points %> Points – Ranked #<%= @stat.rank %></h4>
 	<h4><%= @current_challenge.start_date.strftime("%b %d") %> - <%= @current_challenge.end_date.strftime("%b %d") %></h4>
 	<table id="datapoint_list">
@@ -43,6 +45,16 @@
 			<% end %>
 		</tbody>
 	</table>
+
+	<% else %>
+
+	<h2>It Looks Like We Haven't Added  You to the Challenge Yet</h2>
+	<p>When we get close to the beginning of the Challenge, we will add the users who have purchased the challenge. Stay tuned, and let us know if you have any questions.</p>
+	<h4>Need to Purchase a Challenge?</h4>
+	<p>If you have not yet purchased a challenge, you can do so here:</p>
+	<a class="btn" href="http://bestdayever.com">Purchase Challenge</a>
+
+	<% end %>
 
 </div>
 </div>
