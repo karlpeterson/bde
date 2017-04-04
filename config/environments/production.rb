@@ -39,6 +39,16 @@ Rails.application.configure do
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
+  ActionMailer::Base.smtp_settings = {
+    :address    => 'smtp.sendgrid.net',
+    :port     => '587',
+    :authentication => :plain,
+    :user_name    => ENV['SENDGRID_USERNAME'],
+    :password   => ENV['SENDGRID_PASSWORD'],
+    :domain     => 'heroku.com',
+    :enable_starttls_auto => true
+  }
+
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 
