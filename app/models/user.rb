@@ -35,4 +35,7 @@ class User < ApplicationRecord
   has_many :stats
   has_many :challenges, :through => :cohorts
   # accepts_nested_attributes_for :datapoints
+  def to_label
+    "#{first_name} #{last_name} #{email}"
+  end
 end
