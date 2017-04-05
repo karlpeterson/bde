@@ -28,7 +28,7 @@
 		<tbody>
 			<% @datapoint_list.each do |d| %>
 			<tr<% if d.date == Date.today %> class="today"<% end %>>
-				<td>Day <%= d.day %></td>
+				<td>Day <%= d.day %><br/><%= d.date.strftime("%a %b %d") %></td>
 				<td><%= d.total_points %></td>
 				<td><% if d.data_0 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
 				<td><% if d.data_1 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>

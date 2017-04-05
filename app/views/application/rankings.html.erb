@@ -7,7 +7,8 @@
 
 	<ul id="ranking-list">
 		<% @stat_list.each do |s| %>
-		<li<% if s.user_id = current_user.id %> class="current_user"<% end %>>#<%= s.rank %> <%= s.user.email %> <%= s.user.first_name %> <%= s.user.last_name %> – <%= s.total_points %></li>
+			<li<% if s.user_id == current_user.id %> class="current_user"<% end %>>#<%= s.rank %> <%= s.user.email %> <%= s.user.first_name %> <%= s.user.last_name %> – <%= s.total_points %>
+			</li>
 		<% end %>
 	</ul>
 

@@ -4,11 +4,9 @@
 	<div class="wrap">
 
 	<h2>Day <%= @datapoint.day %></h2>
+	<h4><%= @datapoint.date.strftime("%a %b %d") %></h4>
 
 		<%= render 'form', datapoint: @datapoint %>
-
-		<%= link_to 'Show', @datapoint %> |
-		<%= link_to 'Back', datapoints_path %>
 
 	</div>
 </div>

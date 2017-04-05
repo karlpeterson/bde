@@ -39,6 +39,10 @@ class DatapointsController < ApplicationController
 			datapoint_list = Datapoint.where(:challenge_id => @datapoint.challenge_id, :user_id => @datapoint.user_id)
 			grand_total = datapoint_list.sum(:total_points)
 
+			stat = Stat.find_by(:challenge_id => @datapoint.challenge_id, :user_id => @datapoint.user_id)
+			stat.total_points = grand_total
+			stat.save
+
 			stat_list = Stat.where(:challenge_id => @datapoint.challenge_id).order(:total_points).reverse_order
 			rank = 1
 			stat_list.each_with_index do |stat, i|
@@ -46,10 +50,6 @@ class DatapointsController < ApplicationController
 				stat.rank = rank
 				stat.save
 			end
-
-			stat = Stat.find_by(:challenge_id => @datapoint.challenge_id, :user_id => @datapoint.user_id)
-			stat.total_points = grand_total
-			stat.save
 
 			redirect_to '/dashboard'
 		else
