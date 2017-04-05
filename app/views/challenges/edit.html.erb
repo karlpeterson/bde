@@ -8,7 +8,8 @@
 		<%= render 'form', challenge: @challenge %>
 
 		<%= link_to 'Show', @challenge %> |
-		<%= link_to 'Back', challenges_path %>
+		<%= link_to 'Back', challenges_path %> | 
+		<%= link_to "Delete", challenge_path(@challenge), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
 
 	</div>
 </div>
