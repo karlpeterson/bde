@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # mount ForestLiana::Engine => '/forest'
   resources :challenges, :datapoints
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   authenticated :user do
   	root to: 'challenges#dashboard', as: :authenticated_root
   end
