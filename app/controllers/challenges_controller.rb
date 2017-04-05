@@ -1,9 +1,13 @@
 class ChallengesController < ApplicationController
 	
 	def dashboard
-		@current_challenge = Challenge.last
-		@datapoint_list = Datapoint.where("challenge_id = ? AND user_id = ?", @current_challenge.id, current_user.id).order(:day)
-		@stat = Stat.find_by(:challenge_id => @current_challenge.id, :user_id => current_user.id)
+		@challenge = Challenge.last
+		@today = Date.today
+		@user = current_user
+		user_challenges = @user.challenges
+		@current_challenge = user_challenges.where("DATE(?) BETWEEN start_date AND end_date", @today).last
+		@stat = Stat.find_by(:challenge_id => @challenge.id, :user_id => current_user.id)
+		@datapoint_list = Datapoint.where("challenge_id = ? AND user_id = ?", @challenge.id, current_user.id).order(:day)
 	end
 
 	def rankings
