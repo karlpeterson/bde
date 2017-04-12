@@ -40,6 +40,11 @@
 </script>
 <div id="container">
   <%= render 'shared/header' %>
+  <div id="flash" class="wrap text-center">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
+  </div>
   <%= yield %>
   <%= render 'shared/footer' %>
   <%= debug(params) if Rails.env.development? %>

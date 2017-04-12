@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   root to: "application#index"
   get 'info',			to: 'application#info'
+  get 'thanks',     to: 'application#thanks'
   get 'dashboard',		to: 'challenges#dashboard'
   get 'rankings',		to: 'challenges#rankings'
 end
