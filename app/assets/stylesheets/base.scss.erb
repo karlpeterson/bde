@@ -370,16 +370,26 @@ form {
 /* Challenge Create/Update */
 
 #user_list {
-  .check_boxes {
-    display: block;
-  }
   .checkbox {
-    .check_boxes {
-      display: inline;
-      margin-right: 0.25em;
+    display: inline-block;
+    input[type="checkbox"] {
+      display: none; 
     }
-    display: block;
-    margin-bottom: 1em;
+    label > span {
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      border: 1px solid;
+      padding: 0.5em;
+      text-align: center;
+      letter-spacing: 0.075em;
+      margin-right: 0.5em;
+    }
+    input:checked + span {
+      background-color: #000;
+      color: #fff;
+      
+    }
   }
 }
 
