@@ -38,6 +38,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 # gem 'forest_liana'
+gem 'exception_notification'
+gem 'slack-notifier'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
