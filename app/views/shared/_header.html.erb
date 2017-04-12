@@ -11,15 +11,14 @@
 			<ul>
 				<li class="<%= is_active?('/dashboard') %>"><a href="/dashboard">My Points</a></li>
 				<li class="<%= is_active?('/rankings') %>"><a href="/rankings">Rankings</a></li>
-				<li class="<%= is_active?('/info') %>"><a href="/info">Info</a></li>
 				<li class="<%= is_active?('/users/edit') %>"><a href="/users/edit">Account</a></li>
 				<li class="<%= is_active?('/challenges') %>"><a href="/challenges/">Challenges</a>
 				<% if user_signed_in? %>
-				  <li>
+				  <li class="logout">
 				  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
 				  </li>
 				<% else %>
-				  <li>
+				  <li class="login">
 				  <%= link_to('Login', new_user_session_path)  %>  
 				  </li>
 				<% end %>
