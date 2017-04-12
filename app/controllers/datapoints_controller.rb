@@ -1,4 +1,6 @@
 class DatapointsController < ApplicationController
+
+	before_action :authenticate_user!
 	
 	def index
 		@datapoints = Datapoint.all

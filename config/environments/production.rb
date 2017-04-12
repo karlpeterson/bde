@@ -100,7 +100,7 @@ Rails.application.config.middleware.use ExceptionNotification::Rack,
   :email => {
     :email_prefix => "[BDE ERROR] ",
     :sender_address => %{"notifier" <notifier@points.bestdayever.com>},
-    :exception_recipients => %w{exceptions@points.bestdayever.com}
+    :exception_recipients => %w{kbpeterson@gmail.com}
   },
   :slack => {
     :webhook_url => "[https://hooks.slack.com/services/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]",

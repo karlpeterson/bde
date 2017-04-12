@@ -1,5 +1,7 @@
 class ChallengesController < ApplicationController
 	
+	before_action :authenticate_user!
+
 	def dashboard
 		@today = Date.today
 		@user = current_user
