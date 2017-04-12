@@ -6,7 +6,6 @@
 	<% if @current_challenge.present? %>
 
 	<h4 class="banner"><%= @current_challenge.name %> – <%= @stat.total_points %> Points – Ranked #<%= @stat.rank %></h4>
-	<h4><%= @current_challenge.start_date.strftime("%b %d") %> - <%= @current_challenge.end_date.strftime("%b %d") %></h4>
 	<table id="datapoint_list">
 		<thead>
 			<tr>

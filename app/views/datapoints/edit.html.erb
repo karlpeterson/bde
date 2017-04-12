@@ -1,9 +1,9 @@
 <% title 'Add Points' %>
 
 <div id="content">
-	<div class="wrap">
+	<div class="wrap text-center">
 
-	<h2>Day <%= @datapoint.day %></h2>
+	<h2 class="banner">Day <%= @datapoint.day %></h2>
 	<h4><%= @datapoint.date.strftime("%a %b %d") %></h4>
 
 		<%= render 'form', datapoint: @datapoint %>

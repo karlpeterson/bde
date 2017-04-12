@@ -229,6 +229,45 @@ a.btn {
 
 /* End Home */
 
+/* Datapoint Edit */
+
+.edit_datapoint {
+  width: 340px;
+  margin: 0 auto;
+  .field {
+    display: inline-block;
+    input[type="checkbox"] {
+      display: none; 
+    }
+    label {
+      display: inline-block;
+      vertical-align: middle;
+      border: 1px solid;
+      font-family: 'futura-pt-bold', 'helvetica neue', helvetica, arial, sans-serif;
+      padding: 0.5em;
+      width: 160px;
+      height: 60px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+    }
+    input:checked + label {
+      background-color: #000;
+      color: #fff;
+      &:after {
+        content: "\f00c";
+        font-family: FontAwesome;
+        margin-left: 0.25em;
+      }
+    }
+  }
+  .field.hide {
+    display: none;
+  }
+}
+
+/* End Datapoint Edit */
+
 /* Datapoint Lists */
 
 .banner {
@@ -245,6 +284,7 @@ a.btn {
   text-align: center;
   tr.today {
     background-color: #ffefa6;
+    background-color: #86d0ff;
   }
   thead {
     display: none;
@@ -279,8 +319,15 @@ a.btn {
 
 /* Rankings */
 
+#ranking-list {
+  li {
+    padding: 0.25em;
+  }
+}
+
 .current_user {
   font-weight: bold;
+  background-color: #86d0ff;
 }
 
 /* End Rankings */

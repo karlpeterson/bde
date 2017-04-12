@@ -10,7 +10,7 @@
   <ul id="challenges">
     <% @challenges.each do |challenge| %>
       <li>
-        <h4><%= link_to challenge.name, challenge_path(challenge) %></h4>
+        <h4><%= link_to challenge.name, edit_challenge_path(challenge) %></h4>
       </li>
     <% end %>
   </ul>

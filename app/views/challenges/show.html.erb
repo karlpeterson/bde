@@ -9,44 +9,5 @@
 	<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
 	<%= link_to 'Back to Challenge Archive', challenges_path %>
 
-	<table id="datapoint_list">
-		<thead>
-			<tr>
-				<th></th>
-				<th><div><span>Points</span></div></th>
-				<th><div><span>No Sugar</span></div></th>
-				<th><div><span>No Alcohol</span></div></th>
-				<th><div><span>Ancient Grains Only</span></div></th>
-				<th><div><span>20 Minutes Movement</span></div></th>
-				<th><div><span>Healthy Fats</span></div></th>
-				<th><div><span>Daily Interaction</span></div></th>
-				<th><div><span>Light Dairy</span></div></th>
-				<th><div><span>Sleep</span></div></th>
-				<th><div><span>Vitamin D</span></div></th>
-				<th><div><span>Hydration</span></div></th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @datapoint_list.each do |d| %>
-			<tr>
-				<td>Day <%= d.day %></td>
-				<td><%= d.total_points %></td>
-				<td><% if d.data_0 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><% if d.data_1 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><% if d.data_2 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><% if d.data_3 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><% if d.data_4 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><% if d.data_5 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><% if d.data_6 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><% if d.data_7 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><% if d.data_8 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><% if d.data_9 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><%= link_to 'Edit', edit_datapoint_path(d) %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
-
 </div>
 </div>
