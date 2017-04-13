@@ -154,7 +154,7 @@ class ChallengesController < ApplicationController
 					# for each date in range create an empty Datapoint
 					date_range.each_with_index do |day, index|
 						day_count = index + 1
-						if Datapoint.where(:user_id => user.id, :challenge_id => @challenge.id, :date => day, :day => day_count)
+						if Datapoint.find_by(:user_id => user.id, :challenge_id => @challenge.id, :date => day)
 							# do nothing if Datapoint already exists
 						else
 							datapoint = Datapoint.new(:user_id => user.id, :challenge_id => @challenge.id, :date => day, :day => day_count)
