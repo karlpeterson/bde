@@ -5,7 +5,9 @@
 
   <h2>Challenges</h2>
 
-  <a href="/challenges/new" class="btn">Create a Challenge</a>
+  <% if can? :edit, Challenge %>
+    <a href="/challenges/new" class="btn">Create a Challenge</a>
+  <% end %>
 
   <ul id="challenges">
     <% @challenges.each do |challenge| %>
