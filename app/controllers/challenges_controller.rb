@@ -6,7 +6,8 @@ class ChallengesController < ApplicationController
 		@today = Date.today
 		@user = current_user
 		user_challenges = @user.challenges
-		@current_challenge = user_challenges.where("DATE(?) BETWEEN start_date AND end_date", @today).last
+		# @current_challenge = user_challenges.where("DATE(?) BETWEEN start_date AND end_date", @today).last
+		@current_challenge = user_challenges.last
 		if @current_challenge.present?
 			@stat = Stat.find_by(:challenge_id => @current_challenge.id, :user_id => current_user.id)
 			@datapoint_list = Datapoint.where("challenge_id = ? AND user_id = ?", @current_challenge.id, current_user.id).order(:day)
