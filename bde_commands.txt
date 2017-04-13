@@ -1,0 +1,10 @@
+Add Admin Permissions to User
+
+heroku run rails console
+user = User.find_by(:email => 'email@address.com')
+user.add_role "admin"
+
+Wipe the database
+
+heroku run pg:reset
+heroku run rake db:migrate

@@ -12,7 +12,7 @@
       <li>
         <h4><%= link_to challenge.name, challenge_path(challenge) %>
         	<% if can? :edit, Challenge %>
-        		<span><%= link_to 'Edit', edit_challenge_path(challenge) %></span>
+        		<span class="note"><%= link_to 'Edit', edit_challenge_path(challenge) %></span>
         	<% end %>
         </h4>
       </li>
