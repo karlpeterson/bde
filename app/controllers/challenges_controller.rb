@@ -17,7 +17,8 @@ class ChallengesController < ApplicationController
 		@today = Date.today
 		@user = current_user
 		user_challenges = @user.challenges
-		@current_challenge = user_challenges.where("DATE(?) BETWEEN start_date AND end_date", @today).last
+		# @current_challenge = user_challenges.where("DATE(?) BETWEEN start_date AND end_date", @today).last
+		@current_challenge = user_challenges.last
 		# check user for current cohort
 		# current_cohort = Cohort.where(:challenge_id => @current_challenge.id)
 		
