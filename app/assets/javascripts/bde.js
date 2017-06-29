@@ -4,6 +4,11 @@ function parseDate(s) {
   var b = s.split("-");
   return new Date(b[0], --b[1], b[2]).getTime();
 }
+function addDays(date, days) {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
 
 $(document).on('turbolinks:load', function() {
 	// Responsive Nav
@@ -24,5 +29,15 @@ $(document).on('turbolinks:load', function() {
   	}
 
   });
+
+  // Hide 'Edit' after two weeks
+  var last_day = $('#datapoint_list tbody tr:last-child').data('date');
+  last_day = parseDate(last_day);
+  last_day = addDays(last_day,14);
+  if (today.valueOf() >= last_day.valueOf()) {
+    $('#datapoint_list .edit').each(function(){
+      $(this).hide();
+    });
+  }
   
 });

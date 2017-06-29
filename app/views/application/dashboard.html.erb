@@ -39,7 +39,7 @@
 				<td><% if d.data_7 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
 				<td><% if d.data_8 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
 				<td><% if d.data_9 == true %><i class="fa fa-circle" aria-hidden="true"></i><% else %> <% end %></td>
-				<td><%= link_to 'Edit', edit_datapoint_path(d) %></td>
+				<td class="edit"><%= link_to 'Edit', edit_datapoint_path(d) %></td>
 			</tr>
 			<% end %>
 		</tbody>
